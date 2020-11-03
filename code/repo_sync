@@ -635,7 +635,7 @@ def cleanUpTmpDir():
 
 
 TMPDIR = None
-def sync(fast_scan=False, download_packages=True):
+def sync(fast_scan=False, download_packages=True, product_ids=None):
     '''Syncs Apple's Software Updates with our local store.
     Returns a dictionary of products.'''
     global TMPDIR
@@ -675,6 +675,8 @@ def sync(fast_scan=False, download_packages=True):
                                         len(product_keys), catalog_url)
             product_keys.sort()
             for product_key in product_keys:
+                if product_ids and product_key not in product_ids:
+                    continue
                 if product_key in replicated_products:
                     products[product_key]['AppleCatalogs'].append(
                         catalog_url)
@@ -829,6 +831,10 @@ def main():
                       help='Log all output to LOGFILE. No output to STDOUT.')
     parser.add_option('--recheck', action='store_true',
                       help='Recheck already downloaded packages for changes.')
+    parser.add_option('--no-download', dest='no_download', action='store_true',
+                      help='Do not download update packages.')
+    parser.add_option('--product-id', dest='product_ids', action='append',
+                      metavar='ID', help='Only fetch packages with id ID.')
 
     options, unused_arguments = parser.parse_args()
     if reposadocommon.validPreferences():
@@ -836,7 +842,7 @@ def main():
             reposadocommon.print_stderr('ERROR: curl tool not found at %s',
                                         reposadocommon.pref('CurlPath'))
             exit(-1)
-        if not reposadocommon.pref('LocalCatalogURLBase'):
+        if not reposadocommon.pref('LocalCatalogURLBase') or options.no_download:
             download_packages = False
         else:
             download_packages = True
@@ -845,8 +851,14 @@ def main():
         elif reposadocommon.pref('RepoSyncLogFile'):
             reposadocommon.LOGFILE = reposadocommon.pref('RepoSyncLogFile')
 
+        if options.product_ids:
+            product_ids = set(options.product_ids)
+        else:
+            product_ids = None
+
         sync(fast_scan=(not options.recheck),
-             download_packages=download_packages)
+             download_packages=download_packages,
+             product_ids=product_ids)
 
 
 if __name__ == '__main__':
