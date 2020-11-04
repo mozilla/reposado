@@ -3,7 +3,7 @@ import sys
 from distutils.core import setup
 
 if sys.platform == 'win32':
-    import py2exe
+    import py3exe
 
 # Utility function to read the README file.
 # Used for the long_description.  It's nice, because now 1) we have a top level
