@@ -1,3 +1,9 @@
+**WARNING**
+
+This is a fork of reposado used internally at Mozilla to scrape debug information from macOS builds. It contains a few changes compared with upstream that are needed for our use-cases:
+* Added the --no-download add --product-id options which allow to selectively download only the packages we require (or none at all)
+* The code has been converted to Python 3
+
 **macOS Big Sur important information**  
 In macOS Big Sur, Apple has removed the ability for `softwareupdate` to be pointed to a non-Apple sucatalog. This means you cannot use a Reposado server to serve Apple software updates to Big Sur (and presumably later versions of macOS) clients.
 
