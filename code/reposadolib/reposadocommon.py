@@ -79,39 +79,19 @@ def pref(prefname):
     '''Returns a preference.'''
     default_prefs = {
         'AppleCatalogURLs': [
-            ('http://swscan.apple.com/content/catalogs/'
-             'index.sucatalog'),
-            ('http://swscan.apple.com/content/catalogs/'
-             'index-1.sucatalog'),
-            ('http://swscan.apple.com/content/catalogs/others/'
-             'index-leopard.merged-1.sucatalog'),
-            ('http://swscan.apple.com/content/catalogs/others/'
-             'index-leopard-snowleopard.merged-1.sucatalog'),
-            ('http://swscan.apple.com/content/catalogs/others/'
-             'index-lion-snowleopard-leopard.merged-1.sucatalog'),
-            ('http://swscan.apple.com/content/catalogs/others/'
-             'index-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog'),
-            ('https://swscan.apple.com/content/catalogs/others/'
-             'index-10.9-mountainlion-lion-snowleopard-leopard.merged-1'
-             '.sucatalog'),
-            ('https://swscan.apple.com/content/catalogs/others/'
-             'index-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1'
-             '.sucatalog'),
-            ('https://swscan.apple.com/content/catalogs/others/'
-             'index-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard'
-             '.merged-1.sucatalog'),
-            ('https://swscan.apple.com/content/catalogs/others/'
-             'index-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-'
-             'leopard.merged-1.sucatalog'),
-            ('https://swscan.apple.com/content/catalogs/others/'
-             'index-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-'
-             'leopard.merged-1.sucatalog'),
-            ('https://swscan.apple.com/content/catalogs/others/'
-             'index-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-'
-             'snowleopard-leopard.merged-1.sucatalog'),
-            ('https://swscan.apple.com/content/catalogs/others/'
-             'index-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-'
-             'snowleopard-leopard.merged-1.sucatalog'),
+            ('https://swscan.apple.com/content/catalogs/index-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/index.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-leopard-snowleopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
+            ('https://swscan.apple.com/content/catalogs/others/index-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz'),
         ],
         'PreferredLocalizations': ['English', 'en'],
         'CurlPath': '/usr/bin/curl'
