@@ -15,7 +15,7 @@ def read(fname):
 if sys.platform == 'win32':
 	setup(
 		name = "reposado",
-		version = "git",
+		version = "0.0+git",
 		author = "Greg Neagle",
 		author_email = "reposado@googlegroups.com",
 		maintainer = "Brent B",
@@ -41,7 +41,7 @@ if sys.platform == 'win32':
 else:
 	setup(
 		name = "reposado",
-		version = "git",
+		version = "0.0+git",
 		author = "Greg Neagle",
 		author_email = "reposado@googlegroups.com",
 		maintainer = "Brent B",
