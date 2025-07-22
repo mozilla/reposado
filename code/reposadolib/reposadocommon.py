@@ -43,7 +43,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 import sys
 import os
-import imp
 import plistlib
 import time
 from urllib.parse import urlsplit
@@ -65,8 +64,7 @@ def get_main_dir():
     if py2exe was used
     Code from http://www.py2exe.org/index.cgi/HowToDetermineIfRunningFromExe
     '''
-    if (hasattr(sys, "frozen") or hasattr(sys, "importers")
-            or imp.is_frozen("__main__")):
+    if (hasattr(sys, "frozen") or hasattr(sys, "importers")):
         return os.path.dirname(sys.executable)
     return os.path.dirname(sys.argv[0])
 
